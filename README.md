@@ -1,18 +1,17 @@
-## Getting Started
+## Calculo de Error Absoluto 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este es un pequeño código en lenguaje java creada con la finalidad de calcular el error absoluto según los datos que se proporcionen 
 
-## Folder Structure
+## Casos de Calculo de Errores Absolutos 
 
-The workspace contains two folders by default, where:
+- Calculo Directo por Valores de Aproximación y Valor Real  
+- Calculo por Medio de los valores de 'n' numero de casos
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Estructura de carpetas
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+El espacio de trabajo contiene dos carpetas de forma predeterminada, donde:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- `src`: la carpeta para mantener las fuentes
+- `lib`: la carpeta para mantener las dependencias
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Mientras tanto, los archivos de salida compilados se generarán en la carpeta de forma predeterminada.bin
