@@ -53,7 +53,7 @@ public class Error_Absoluto {
     }
 
 
-    // subclase NumberFormat para rendondear a dos decimales 
+    // subclase DecimalFormat para rendondear a dos decimales 
     static DecimalFormat a = new DecimalFormat("#.00"); 
     
     
