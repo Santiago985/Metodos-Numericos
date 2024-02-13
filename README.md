@@ -4,8 +4,8 @@ Este es un pequeño código en lenguaje java creada con la finalidad de calcular
 
 ## Casos de Calculo de Errores Absolutos 
 
-- Calculo Directo por Valores de Aproximación y Valor Real  
-- Calculo por Medio de los valores de 'n' numero de casos
+- Calculo por Medio de los Valores de Aproximación y Valor Real  
+- Calculo por Medio de los Valores de 'n' numero de casos
 
 ## Estructura de carpetas
 
