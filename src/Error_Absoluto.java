@@ -115,7 +115,7 @@ public class Error_Absoluto {
         System.out.println("==== Errores absolutos ====\n");
         for (int i = 0; i < numeroDeCasos; i++) {
             double errorAbsoluto = Math.abs(valores[i] - aproximacion);
-            System.out.println("Error absoluto para el valor #" + (i + 1) + ": " + String.format("%.2f",errorAbsoluto));
+            System.out.println("Error absoluto para el valor #" + (i + 1) + ": " + String.format("%.4f",errorAbsoluto));
         }
     }
     
