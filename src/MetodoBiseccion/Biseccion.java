@@ -18,55 +18,55 @@ public class Biseccion {
 
         //TODO: INVESTIGAR LAS CONDICIONES DE INTERACIONES Y MODIFICAR LA CONDICIONAL "if(){}" DEBAJO
 
-        if(media == 0 || (Fa*Fb)>0 )/*Si hubo un error en la iteraccion, aqui termina*/{
+        
+        if(error <= ErrorAproximar)/*Si se encuentra un margen  de error menor o igual al permitido se termina*/{
+
+            System.out.println("\n DATOS FINALES :" ); // En caso de encontrar un margen de error igual o menor se termina
+            resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+            
+            System.out.println("\n --- PROCESO TERMINADO: Se encontro un margen de error menor o igual al establecido ---\n");
+        }
+
+        else if(media == 0 || (Fa*Fb)>=0 || Fm==0)/*Si hubo un error en la iteraccion, aqui termina*/{
+                
             System.out.println("\n DATOS FINALES :" );
             resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
-
-            if(media==0){
-                System.out.println("\n --- PROCESO TERMINADO: La media termina siendo cero ---\n");
-            } else System.out.println("\n --- PROCESO TERMINADO: Los signos entre los valores (Fa y Fb) ya no son diferentes ---\n");
-        }
         
-        else {
+            if( media==0 ){
+                System.out.println("\n --- PROCESO TERMINADO: La media termina siendo cero. Por lo tanto no hay mas interaciones ---\n");
+            } 
             
-            if(error <= ErrorAproximar){
-                System.out.println("\n DATOS FINALES :" ); // En caso de encontrar un margen de error igual o menor se termina
-                resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+            else if( Fm==0 ){
+                System.out.println("\n --- PROCESO TERMINADO: Fm termina siendo cero. Por lo tanto no hay mas interaciones ---\n");
+            } 
+            
+            else {
+                System.out.println("\n --- PROCESO TERMINADO: Los signos entre los valores (Fa y Fb) ya no son diferentes. Por lo tanto no hay mas interaciones ---\n");
+            } 
+        }
 
-                System.out.println("\n --- PROCESO TERMINADO: Se encontro un margen de error menor o igual al establecido ---\n");
-            }
-
-            else{ /* Raiz de la recursividad */
-
-                if(signoPositivo(Fm)){  
-
-                    if(!signoPositivo(Fa)) /* cuando: - Fa y + Fm   */ {
-
-                        resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
-                        calcularValores(rangoA, media, ErrorAproximar, ecua);
-
-                    }
-                    else /* cuando: + Fm y - FB */ {
-
-                        resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
-                        calcularValores(media, rangoB, ErrorAproximar, ecua);
-                    }
-
-                } else {
-                    if (signoPositivo(Fa))/* cuando: + Fa y -Fm */ {
-
-                        resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
-                        calcularValores(rangoA, media, ErrorAproximar, ecua);
-
-                    } else /* cuando: - Fm y + Fb*/ {
-
-                        resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
-                        calcularValores(media, rangoB, ErrorAproximar, ecua);
-                    
-                    }
+        else{ /* Raiz de la recursividad */
+            if(signoPositivo(Fm)){  
+                if(!signoPositivo(Fa)) /* cuando: - Fa y + Fm   */ {
+                    resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+                    calcularValores(rangoA, media, ErrorAproximar, ecua);
+                }
+                else /* cuando: + Fm y - FB */ {
+                    resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+                    calcularValores(media, rangoB, ErrorAproximar, ecua);
+                }
+            } else {
+                if (signoPositivo(Fa))/* cuando: + Fa y -Fm */ {
+                    resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+                    calcularValores(rangoA, media, ErrorAproximar, ecua);
+                } else /* cuando: - Fm y + Fb*/ {
+                    resultados(iteracciones, rangoA, rangoB, media, error, Fa, Fb, Fm);
+                    calcularValores(media, rangoB, ErrorAproximar, ecua);
                 }
             }
-        }          
+        }
+
+        iteracciones = 0; 
     }
 
     static Double  ValorMedio(double a , double b){
