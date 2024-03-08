@@ -37,16 +37,24 @@ public class MenuBiseccion {
 
                         imprimir("\n Ingrese su ecuacion: ");ecuacion = scn1.next();
                         imprimir(" Ingrese rangos (Ejemplo: 'a, b' ): ");rango = scn1.next();
-                        imprimir(" Ingrese porcentaje de error: ");err = scn1.nextDouble(); 
-
                         String[] rangos = rango.split(","); // Divide la cadena de texto de rango en 2 partes, separadas por las comas
 
-                        imprimir("\n DATOS OBTENIDOS \n: ");
+                        Double b = testeo(
+                            Double.parseDouble(rangos[0]), 
+                            Double.parseDouble(rangos[1]), 
+                            scn1
+                        );
+
+
+                        imprimir(" Ingrese porcentaje de error: ");err = scn1.nextDouble(); 
+
+
+                        imprimir("\n DATOS OBTENIDOS: \n");
 
 
                         Biseccion.calcularValores(
                             Double.parseDouble(rangos[0]), 
-                            Double.parseDouble(rangos[1]), 
+                            b, 
                             err, 
                             ecuacion
                         ); 
@@ -73,5 +81,15 @@ public class MenuBiseccion {
 
     static void imprimir(String text){
         System.out.print(text);
+    }
+
+    public static double testeo(Double a, Double b, Scanner scn){
+
+        while (a>b){
+            imprimir("\n Vuelva a Ingresar un valor para el rango B, mayor que el rango A: ");
+            b = scn.nextDouble();
+        };
+
+        return b;
     }
 }
