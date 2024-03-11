@@ -30,7 +30,7 @@ Carpetas
 
 Codigos
 
-- Main.py: Programa principal para probar los metodos.
+- Main.java: Programa principal para probar los metodos.
 - Menu_Error_Absoluto.java: Codigo para el calculo del error absoluto y el metodo menu correspondiente.
 - Biseccion.java: Codigo para el metodo de bisección.
 - Evaluar.java: Codigo que resuelve ecuaciones escritas como cadenas de textos
